@@ -2,7 +2,7 @@ const chai = require('chai');
 chai.use(require("chai-as-promised"));
 const should = chai.should();
 
-var rutificador = require('../index');
+const rutificador = require('../index');
 
 describe('rutificador', () => {
   it('should response with valid name', () => {
