@@ -1,2 +1,2 @@
 # rutificador
-Node Module | Get chilean RUT from people's name
+[![Build Status](https://travis-ci.org/mrpatiwi/rutificador.svg)](https://travis-ci.org/mrpatiwi/rutificador)
