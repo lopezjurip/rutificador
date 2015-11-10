@@ -1,6 +1,6 @@
 {
   "name": "rutificador",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Get chilean RUT from people's name",
   "main": "index.js",
   "scripts": {
