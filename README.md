@@ -4,12 +4,15 @@
 > Disclamer: This is made with learning purposes, use by your own responsability.
 
 ## Install
+This project uses ES6, so make sure your [Node version is compatible](https://nodejs.org/en/docs/es6/).
 ```sh
 $ npm install --save rutificador
 ```
 
 ## Usage
 ```js
+'use strict';
+
 const rutificador = require('rutificador');
 
 rutificador({name: 'Juán Perez'}).then(juanitos => {

@@ -1,3 +1,5 @@
+'use strict';
+
 const rutificador = require('rutificador');
 
 rutificador({name: 'Juán Perez'}).then(juanitos => {
