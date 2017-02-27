@@ -1,25 +1,22 @@
 # rutificador
-[![npm version][npm-image]][npm-url] [![Build Status][ci-image]][ci-url] [![dependencies][dependencies-image]][dependencies-url] [![lint][lint-image]][lint-url]
+[![npm version][npm-image]][npm-url] [![Build Status][ci-image]][ci-url] [![dependencies][dependencies-image]][dependencies-url]
 
 > Disclamer: This is made with learning purposes, use by your own responsability.
 
 ## Install
-This project uses ES6, so make sure your [Node version is compatible](https://nodejs.org/en/docs/es6/).
 ```sh
 $ npm install --save rutificador
 ```
 
 ## Usage
 ```js
-'use strict';
+const rutificador = require('rutificador')
 
-const rutificador = require('rutificador');
-
-rutificador({name: 'Juán Perez'}).then(juanitos => {
-  console.log(juanitos);
+rutificador({ name: 'Juán Perez' }).then(juanitos => {
+  console.log(juanitos)
 }).catch(err => {
   // Do something
-});
+})
 ```
 
 This prints:
@@ -32,9 +29,15 @@ This prints:
 
 Also you can match by RUT:
 ```js
-rutificador({rut: 'XXXXXXX-0'}).then(resp => {
+rutificador({ rut: 'XXXXXXX-0' }).then(resp => {
   // ...
-});
+})
+```
+
+## Tests
+```sh
+$ npm install
+$ npm test
 ```
 
 [ci-image]: https://travis-ci.org/mrpatiwi/rutificador.svg
