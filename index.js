@@ -17,21 +17,21 @@ module.exports = ({ rut, name }) => {
   }
 
   return request(options)
-  .then($ => $('input[name="csrfmiddlewaretoken"]').val())
-  .then(token => {
-    return request.post('http://chile.rutificador.com/get_generic_ajax/', {
-      form: {
-        entrada: input,
-        csrfmiddlewaretoken: token
+    .then($ => $('input[name="csrfmiddlewaretoken"]').val())
+    .then(token => {
+      return request.post('http://chile.rutificador.com/get_generic_ajax/', {
+        form: {
+          entrada: input,
+          csrfmiddlewaretoken: token
+        }
+      })
+    })
+    .then(resp => JSON.parse(resp))
+    .then(json => {
+      if (json.status !== 'success') {
+        throw new Error(json.status)
+      } else {
+        return json.value
       }
     })
-  })
-  .then(resp => JSON.parse(resp))
-  .then(json => {
-    if (json.status !== 'success') {
-      throw new Error(json.status)
-    } else {
-      return json.value
-    }
-  })
 }

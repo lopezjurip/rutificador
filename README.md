@@ -1,11 +1,20 @@
 # rutificador
 [![npm version][npm-image]][npm-url] [![Build Status][ci-image]][ci-url] [![dependencies][dependencies-image]][dependencies-url]
 
-> Disclamer: This is made with learning purposes, use by your own responsability.
+Get chilean RUT from people's name from http://chile.rutificador.com.
 
 ## Install
+
+With `npm`:
+
 ```sh
-$ npm install --save rutificador
+npm install --save rutificador
+```
+
+With [`yarn`](https://yarnpkg.com):
+
+```sh
+yarn add rutificador
 ```
 
 ## Usage
@@ -35,9 +44,12 @@ rutificador({ rut: 'XXXXXXX-0' }).then(resp => {
 ```
 
 ## Tests
+
 ```sh
-$ npm install
-$ npm test
+npm test
+
+# or
+yarn test
 ```
 
 [ci-image]: https://travis-ci.org/mrpatiwi/rutificador.svg
@@ -46,5 +58,3 @@ $ npm test
 [npm-url]: http://badge.fury.io/js/rutificador
 [dependencies-image]: https://david-dm.org/mrpatiwi/rutificador.svg
 [dependencies-url]: https://david-dm.org/mrpatiwi/rutificador
-[lint-image]: https://codeclimate.com/github/mrpatiwi/rutificador/badges/gpa.svg
-[lint-url]: https://codeclimate.com/github/mrpatiwi/rutificador
