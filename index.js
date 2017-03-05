@@ -10,16 +10,20 @@ const request = require('request-promise').defaults({ jar: true })
  */
 module.exports = ({ rut, name }) => {
   const input = rut || name
+  const url = 'https://chile.rutificador.com'
 
   const options = {
-    uri: 'http://chile.rutificador.com/',
+    url,
     transform: body => load(body)
   }
 
   return request(options)
     .then($ => $('input[name="csrfmiddlewaretoken"]').val())
     .then(token => {
-      return request.post('http://chile.rutificador.com/get_generic_ajax/', {
+      return request.post(`${url}/get_generic_ajax/`, {
+        headers: {
+          referer: url
+        },
         form: {
           entrada: input,
           csrfmiddlewaretoken: token
