@@ -22,7 +22,8 @@ module.exports = ({ rut, name }) => {
     .then(token => {
       return request.post(`${url}/get_generic_ajax/`, {
         headers: {
-          referer: url
+          'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+          'referer': url
         },
         form: {
           entrada: input,
