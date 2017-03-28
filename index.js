@@ -1,5 +1,5 @@
 const { load } = require('cheerio')
-const request = require('request-promise').defaults({ jar: true })
+const request = require('request-promise')
 
 /**
  * Get people matching name or RUT.
@@ -20,7 +20,13 @@ module.exports = ({ rut, name }) => {
   return request(options)
     .then($ => $('input[name="csrfmiddlewaretoken"]').val())
     .then(token => {
-      return request.post(`${url}/get_generic_ajax/`, {
+      const j = request.jar()
+      const cookie = request.cookie(`csrftoken=${token}`)
+      j.setCookie(cookie, `${url}/get_generic_ajax/`)
+
+      return request.post({
+        url: `${url}/get_generic_ajax/`,
+        jar: j,
         headers: {
           'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
           'referer': url
