@@ -1,60 +1,41 @@
-# rutificador
-[![npm version][npm-image]][npm-url] [![Build Status][ci-image]][ci-url] [![dependencies][dependencies-image]][dependencies-url]
+# rutificador [![Build Status](https://travis-ci.org/lopezjurip/rutificador.svg?branch=master)](https://travis-ci.org/lopezjurip/rutificador)
 
-Get chilean RUT from people's name from http://chile.rutificador.com.
+Get chilean RUT from people's name or vice versa from [Rutify – Rutificador](https://rutify.cl/).
 
 ## Install
-
-With `npm`:
 
 ```sh
 npm install --save rutificador
 ```
 
-With [`yarn`](https://yarnpkg.com):
-
-```sh
-yarn add rutificador
-```
-
 ## Usage
-```js
-const rutificador = require('rutificador')
 
-rutificador({ name: 'Juán Perez' }).then(juanitos => {
+```js
+// Packages
+const rutify = require('rutificador')
+
+// Search by name
+rutify({ name: 'Juán Perez' }).then(juanitos => {
   console.log(juanitos)
-}).catch(err => {
-  // Do something
+})
+
+// Search by RUT
+rutify({ rut: 'xxxxxxxxx' }).then(results => {
+  console.log(results)
 })
 ```
 
-This prints:
+### API
+
 ```js
-[ { name: 'JUAN PEREZ DUQUE', rut: 'XXXXXXX-6' },
-  { name: 'RAUL JUAN PEREZ MONTENEGRO', rut: 'XXXXXXX-0' },
-  { name: 'JUAN PEREZ ROJAS', rut: 'XXXXXXX-6' },
-  ... ]
+rutify(opts : Object) => Promise
 ```
 
-Also you can match by RUT:
-```js
-rutificador({ rut: 'XXXXXXX-0' }).then(resp => {
-  // ...
-})
-```
+- `opts`
+  * `rut`: The chilean RUT (DNI), example `189726317` or `18.972.631-7`.
+  * `name`: The name you want to search.
 
-## Tests
+## Related
 
-```sh
-npm test
-
-# or
-yarn test
-```
-
-[ci-image]: https://travis-ci.org/mrpatiwi/rutificador.svg
-[ci-url]: https://travis-ci.org/mrpatiwi/rutificador
-[npm-image]: https://badge.fury.io/js/rutificador.svg
-[npm-url]: http://badge.fury.io/js/rutificador
-[dependencies-image]: https://david-dm.org/mrpatiwi/rutificador.svg
-[dependencies-url]: https://david-dm.org/mrpatiwi/rutificador
+- [rut.js](https://github.com/jlobos/rut.js) - Sencilla y pequeña librería para validar y dar formato al RUT
+- [rut-regex](https://github.com/jlobos/rut-regex) - Regular expression for matching Chile RUT's
