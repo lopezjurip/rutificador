@@ -1,25 +1,20 @@
 import test from 'ava'
-import rutificador from './index'
+import rutify from './index'
 
-test('name, rut & dv', async t => {
-  const {
-    name,
-    rut,
-    dv
-  } = (await rutificador({ name: 'José Miguel Viñuela Infante' }))[0]
+test('search by name', async t => {
+  const results = await rutify({ name: 'José Miguel Viñuela Infante' })
+  const [{ name, rut }] = results
 
-  t.is(name, 'VIÑUELA INFANTE JOSE MIGUEL')
-  t.is(rut, 12585741)
-  t.is(dv, '8')
+  t.true(Array.isArray(results))
+  t.is(name, 'viñuela infante jose miguel')
+  t.is(rut, '125857418')
 })
-test('rut', async t => {
-  const {
-    name,
-    rut,
-    dv
-  } = (await rutificador({ rut: '12585741-8' }))[0]
 
-  t.is(name, 'VIÑUELA INFANTE JOSE MIGUEL')
-  t.is(rut, 12585741)
-  t.is(dv, '8')
+test('search by rut', async t => {
+  const results = await rutify({ rut: '12585741-8' })
+  const [{ name, rut }] = results
+
+  t.true(Array.isArray(results))
+  t.is(name, 'viñuela infante jose miguel')
+  t.is(rut, '125857418')
 })

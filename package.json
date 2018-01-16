@@ -1,39 +1,35 @@
 {
   "name": "rutificador",
   "version": "1.4.0",
-  "description": "Get chilean RUT from people's name",
-  "main": "index.js",
-  "scripts": {
-    "test": "standard && ava"
-  },
+  "description": "Get chilean RUT from people's name or vice versa",
+  "license": "MIT",
+  "repository": "mrpatiwi/rutificador",
   "engines": {
     "node": ">=6"
+  },
+  "scripts": {
+    "test": "standard && ava"
   },
   "files": [
     "index.js"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mrpatiwi/rutificador.git"
-  },
   "keywords": [
     "chile",
     "chilean",
-    "rut"
+    "rut",
+    "rutificador",
+    "rutify",
+    "cl",
+    "search",
+    "people",
+    "servel"
   ],
-  "author": "Patricio López <patricio@lopezjuri.com> (https://lopezjuri.com)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mrpatiwi/rutificador/issues"
-  },
-  "homepage": "https://github.com/mrpatiwi/rutificador#readme",
   "dependencies": {
-    "cheerio": "^0.22.0",
-    "request": "^2.81.0",
-    "request-promise": "^4.2.0"
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {
-    "ava": "^0.18.2",
-    "standard": "^9.0.2"
+    "ava": "^0.24.0",
+    "standard": "^10.0.3"
   }
 }
