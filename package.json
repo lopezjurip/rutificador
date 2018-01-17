@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "Get chilean RUT from people's name or vice versa",
   "license": "MIT",
-  "repository": "mrpatiwi/rutificador",
+  "repository": "lopezjurip/rutificador",
   "engines": {
     "node": ">=6"
   },
