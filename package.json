@@ -1,6 +1,6 @@
 {
   "name": "rutificador",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Get chilean RUT from people's name or vice versa",
   "license": "MIT",
   "repository": "lopezjurip/rutificador",
